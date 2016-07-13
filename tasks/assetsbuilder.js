@@ -1,10 +1,9 @@
+"use strict";
+
 module.exports = function(grunt) {
 
-  "use strict";
-
   // Node utils
-  var util = require("util"),
-      path = require("path"),
+  var path = require("path"),
       fs = require("fs"),
       et = require("elementtree");
 
