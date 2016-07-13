@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageLayoutComponent>
+
+  <mergeFiles>
+    <less name="common" src="page-common" />
+    <less name="specific" src="page-specific" />
+    <less name="component" src="cpt_c.less, cpt_d.less" />
+  </mergeFiles>
+
+</pageLayoutComponent>
