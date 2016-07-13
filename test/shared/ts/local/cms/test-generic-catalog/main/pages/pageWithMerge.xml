@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageLayoutComponent>
 
-  <!-- WITHOUT MERGE FILES -->
+  <mergeFiles>
+    <less name="common" src="page-common" />
+    <less name="specific" src="page-specific" />
+    <less name="component" src="cpt_c, cpt_d" />
+  </mergeFiles>
 
 </pageLayoutComponent>

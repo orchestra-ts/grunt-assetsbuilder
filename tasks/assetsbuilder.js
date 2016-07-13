@@ -46,10 +46,12 @@ module.exports = function(grunt) {
         compress = true;
 
     // Clean the temporary directory
+    require("grunt-contrib-clean")(grunt);
     grunt.config(["clean", "temporary"], [opts.temp.path]);
     grunt.task.run("clean:temporary");
 
     // When dependency exist copy the reference files
+    require("grunt-contrib-copy")(grunt);
     if (opts.catalog.dependency) {
       grunt.config(["copy", "dependency", "files"], [{expand: true, cwd: opts.catalog.dependency, src: "**", dest: opts.temp.path}]);
       grunt.task.run("copy:dependency");
@@ -116,6 +118,7 @@ module.exports = function(grunt) {
       }
 
       // Initialize and run less task
+      require("grunt-contrib-less")(grunt);
       grunt.config(["less", "prod", "options", "compress"], compress);
       grunt.config(["less", "prod", "files"], grunt.file.readJSON(opts.json.path));
       grunt.task.run("less:prod");
