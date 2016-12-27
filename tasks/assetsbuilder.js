@@ -7,18 +7,26 @@ module.exports = function(grunt) {
       fs = require("fs"),
       et = require("elementtree");
 
-  // return a array with the style path
+  /**
+   * return a array with the style path
+   *
+   * @param styles {Array}
+   * @param pathFile
+   * @returns {Array}
+   */
   function createSources(styles, pathFile) {
-    var temp = [];
-
-    styles.forEach(function(name) {
-      temp.push(pathFile + name + ".less");
+    return styles.map(function(name) {
+      return pathFile + name + ".less";
     });
-
-    return temp;
   }
 
-  // Merge and check require options
+  /**
+   * Merge and check require options
+   *
+   * @param defaultOptions
+   * @param opts
+   * @returns {*}
+   */
   function checkOptions(defaultOptions, opts) {
     var merge = grunt.util._.merge(defaultOptions, opts);
 

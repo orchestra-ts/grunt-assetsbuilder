@@ -1,6 +1,6 @@
 {
   "name": "grunt-assetsbuilder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Orchestra",
     "url": "http://www.orchestra.eu"
@@ -9,17 +9,17 @@
   "readmeFilename": "README.md",
   "main": "Gruntfile.js",
   "engines": {
-    "node": "~0.12.7"
+    "node": "~6.9.1"
   },
   "dependencies": {
     "elementtree": "^0.1.6",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-less": "^1.3.0"
+    "grunt-contrib-less": "^1.4.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "~1.0.0"
+    "grunt-contrib-jshint": "~1.1.0"
   },
   "peerDependencies": {
     "grunt": "^1.0.1"
