@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/grunt-assetsbuilder.svg)](https://badge.fury.io/js/grunt-assetsbuilder)
+
 # grunt-assetsbuilder
 Grunt task to build assets from XML configuration pages
 
