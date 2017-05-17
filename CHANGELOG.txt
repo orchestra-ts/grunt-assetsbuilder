@@ -1,3 +1,8 @@
+v1.2.0:
+  date: 2017-05-17
+  changes:
+    - Update dependencies.
+    - Add badges
 v1.1.0:
   date: 2016-12-27
   changes:
