@@ -97,7 +97,7 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask("default", ["assetsbuilder"]);
 
-  // Specific tasks
+  // Specific tasksTemp
   grunt.registerTask("generic", ["assetsbuilder:<%= catalogName[0] %>"]);
   grunt.registerTask("specific", ["assetsbuilder:<%= catalogName[1] %>"]);
   grunt.registerTask("cleanTemp", ["clean:lessTemp"]);

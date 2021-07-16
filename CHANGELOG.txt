@@ -1,3 +1,9 @@
+v2.0.0:
+  date: 2021-07-16
+  changes:
+    - Use NodeJS LTS 14 or more.
+    - Use NPM 6 or more.
+    - Update dependencies.
 v1.2.0:
   date: 2017-05-17
   changes:

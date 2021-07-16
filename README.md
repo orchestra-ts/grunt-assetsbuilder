@@ -19,17 +19,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-assetsbuilder');
 ```
 
-*This plugin was designed to work with Grunt 1.0.x.*
+*This plugin was designed to work with Grunt 1.4.x.*
 
 ## TODO
-
-- [x] Clean package.json (ok)
-- [x] Add config into builder (ok)
-- [x] Remove grunt less task and add into the builder (ok)
-- [x] Complete verbose and log message (ok)
-- [x] Add override path (ok)
-- [ ] Make DOC
-
-- [ ] Add less media parameter
-- [ ] Add css file type
-- [ ] Add js file type
+- [ ] Add DOC
