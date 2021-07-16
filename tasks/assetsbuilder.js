@@ -3,9 +3,9 @@
 module.exports = function(grunt) {
 
   // Node utils
-  var path = require("path"),
-      fs = require("fs"),
-      et = require("elementtree");
+  const path = require("path");
+  const fs = require("fs");
+  const et = require("elementtree");
 
   /**
    * return a array with the style path
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
    * @returns {*}
    */
   function checkOptions(defaultOptions, opts) {
-    var merge = grunt.util._.merge(defaultOptions, opts);
+    const merge = grunt.util._.merge(defaultOptions, opts);
 
     if (!merge.catalog || !merge.catalog.less) {
       grunt.log.error("Cannot build because no catalog option was found.".red);
@@ -49,9 +49,9 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask("assetsbuilder", "Parse XML pages and generated manifest", function() {
 
-    var defaultOptions = { manifest: { banner: "" }, xml: { xpath: "./mergeFiles/less" }, temp: { path: "./tmp/copy/" } },
-        opts = checkOptions(defaultOptions, this.options()),
-        compress = true;
+    const defaultOptions = {manifest: {banner: ""}, xml: {xpath: "./mergeFiles/less"}, temp: {path: "./tmp/copy/"}};
+    const opts = checkOptions(defaultOptions, this.options());
+    let compress = true;
 
     // Clean the temporary directory
     require("grunt-contrib-clean")(grunt);
@@ -72,8 +72,8 @@ module.exports = function(grunt) {
 
     this.files.forEach(function(file) {
 
-      var fileJSON = {},
-          manifest = opts.manifest.banner;
+      const fileJSON = {};
+      let manifest = opts.manifest.banner;
 
       if (!file.src.length) {
         grunt.log.warn("Cannot build because no source files were found.");
@@ -87,18 +87,18 @@ module.exports = function(grunt) {
 
       file.src.forEach(function(xml) {
 
-        var data = fs.readFileSync(xml).toString(),
-            etree = et.parse(data),
-            less = etree.findall(opts.xml.xpath);
+        const data = fs.readFileSync(xml).toString();
+        const etree = et.parse(data);
+        const less = etree.findall(opts.xml.xpath);
 
         if (less.length) {
           manifest += path.basename(xml, ".xml") + "=";
 
           less.forEach(function(element, index) {
-            var name = less[index].get("name"),
-                src = less[index].get("src").replace(/\s+/g, "").split(","),
-                id = less[index].get("id"),
-                target = file.dest + "css/" + name + ".css";
+            const name = less[index].get("name");
+            const src = less[index].get("src").replace(/\s+/g, "").split(",");
+            const id = less[index].get("id");
+            const target = file.dest + "css/" + name + ".css";
 
             fileJSON[target] = createSources(src, opts.temp.path);
             manifest += name + ".css" + (id ? "[" + id + "]" : "") + (index === less.length - 1 ? "" : ",");
